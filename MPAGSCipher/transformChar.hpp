@@ -4,6 +4,6 @@
 #include <string>
 
 //! Declare transformChar function
-std::string transformChar(char in_char);
+std::string transformChar( const char c);
 
 #endif // MPAGSCIPHER_TRANSFORMCHAR_HPP

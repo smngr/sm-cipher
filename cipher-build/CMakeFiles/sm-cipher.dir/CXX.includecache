@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../MPAGSCipher/processCommandLine.hpp
+string
+-
+
+../MPAGSCipher/transformChar.hpp
+string
+-
+
+/home/spmngr/cpp-tutorial/sm-cipher/MPAGSCipher/processCommandLine.cpp
+iostream
+-
+string
+-
+
+/home/spmngr/cpp-tutorial/sm-cipher/MPAGSCipher/transformChar.cpp
+iostream
+-
+string
+-
+
+/home/spmngr/cpp-tutorial/sm-cipher/mpags-cipher.cpp
+iostream
+-
+string
+-
+fstream
+-
+transformChar.hpp
+/home/spmngr/cpp-tutorial/sm-cipher/transformChar.hpp
+processCommandLine.hpp
+/home/spmngr/cpp-tutorial/sm-cipher/processCommandLine.hpp
+

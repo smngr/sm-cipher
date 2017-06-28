@@ -1,5 +1,9 @@
 #include <iostream>
 #include <string>
+#include <fstream>
+
+#include "transformChar.hpp"
+#include "processCommandLine.hpp"
 
 /*////////////////////////////////////////////////////////////
 
@@ -9,114 +13,62 @@ be alphabetic, and in uppercase
 
 ////////////////////////////////////////////////////////////*/
 
-
-std::string transformChar( char in_char )
+int main( int argc, char* argv[])
 {
-  // Initialize i
-  int i = 0;
-  //char in_char = 'x';
-  std::string out_str = "";
-  std::string out_char = "y";
+  bool wantsHelp{false};
+  bool wantsVersion{false};
+  std::string input{""};
+  std::string output{""};
+  char in_char;
 
-  // Initialize number variables
-  std::string zero{"ZERO"};
-  std::string one{"ONE"};
-  std::string two{"TWO"};
-  std::string three{"THREE"};
-  std::string four{"FOUR"};
-  std::string five{"FIVE"};
-  std::string six{"SIX"};
-  std::string seven{"SEVEN"};
-  std::string eight{"EIGHT"};
-  std::string nine{"NINE"};
+  processCommandLine(argc, argv, wantsHelp, wantsVersion, input, output);
 
-  // check if input character is letter
-
-  if (isalpha(in_char))
+  if (wantsHelp)
   {
-    //std::cout << "Char is alphabetic" << std::endl;
-    if (islower(in_char))
-    {
-      out_char = toupper(in_char);
-    }
-    else
-    {
-      out_char = in_char;
-    }
+    //std::cout << "I Will Help!\n";
+    doPrintCommandLineHelp();
   }
 
-  switch (in_char) {
-    case '1':
-    out_char = one;
-    break;
-
-    case '2':
-    out_char = two;
-    break;
-
-    case '3':
-    out_char = three;
-    break;
-
-    case '4':
-    out_char = four;
-    break;
-
-    case '5':
-    out_char = five;
-    break;
-
-    case '6':
-    out_char = six;
-    break;
-
-    case '7':
-    out_char = seven;
-    break;
-
-    case '8':
-    out_char = eight;
-    break;
-
-    case '9':
-    out_char = nine;
-    break;
-
-    case '0':
-    out_char = zero;
-    break;
-
-  }
-
-  if (isalnum(in_char))
+  if (wantsVersion)
   {
-    out_str.append(out_char);
+    doPrintCommandLineVersion();
   }
 
-  return out_str;
+  if (input != "")
+  {
+    std::ifstream in_file {input};
+    bool ok_to_read = in_file.good();
 
-}
+    if (ok_to_read == false)
+    {
+      std::cerr << "Input file unable to be read" << std::endl;
+      return 1;
+    }
 
+    in_file >> in_char;
+    std::cout << in_char;
 
-int main()
-{
-  std::string msg{"Enter Input for Cipher. Letters will be changed to uppercase, all numbers will be changed to words. All non alphanumeric characters wil be removed."};
-  std::cout << msg << std::endl;
+  }
+  else
+  {
+    std::cin >> in_char;
+  }
+
+  // std::string msg{"Enter Input for Cipher. Letters will be changed to uppercase, all numbers will be changed to words. All non alphanumeric characters wil be removed."};
+  // std::cout << msg << std::endl;
 
   // restrictions: letters all in uppercase [x]
   // numbers: changed to words  [X]
   // non-alphanumeric characters removed  [x]
 
-  char in_char;
-  std::string cipher_out;
-  std::string transform_out;
 
-  while(std::cin >> in_char)
-  {
-    transform_out = transformChar(in_char);
-    cipher_out.append(transform_out);
-    std::cout << "Cipher Output: " << cipher_out << std::endl;
-  }
+  std::string cipher_input;
+
+  // while(std::cin >> in_char)
+  // {
+    cipher_input = transformChar(in_char);
+    std::cout << "String:" << cipher_input << std::endl;
+  // }
 
   // std::cout << input << std::endl;
 

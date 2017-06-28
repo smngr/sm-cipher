@@ -1,0 +1,5 @@
+/home/spmngr/cpp-tutorial/sm-cipher/cipher-build/CMakeFiles/package.dir
+/home/spmngr/cpp-tutorial/sm-cipher/cipher-build/CMakeFiles/package_source.dir
+/home/spmngr/cpp-tutorial/sm-cipher/cipher-build/CMakeFiles/edit_cache.dir
+/home/spmngr/cpp-tutorial/sm-cipher/cipher-build/CMakeFiles/rebuild_cache.dir
+/home/spmngr/cpp-tutorial/sm-cipher/cipher-build/CMakeFiles/sm-cipher.dir

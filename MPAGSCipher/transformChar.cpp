@@ -3,89 +3,62 @@
 
 // Define transformChar
 
-
-std::string transformChar( char in_char )
+std::string transformChar( const char c )
 {
 
-  //char in_char = 'x';
-  std::string out_str = "";
-  std::string out_char = "y";
-
-  // Initialize number variables
-  std::string zero{"ZERO"};
-  std::string one{"ONE"};
-  std::string two{"TWO"};
-  std::string three{"THREE"};
-  std::string four{"FOUR"};
-  std::string five{"FIVE"};
-  std::string six{"SIX"};
-  std::string seven{"SEVEN"};
-  std::string eight{"EIGHT"};
-  std::string nine{"NINE"};
+  std::string inputText{""};
 
   // check if input character is letter
 
-  if (isalpha(in_char))
+  if (isalpha(c))
   {
     //std::cout << "Char is alphabetic" << std::endl;
-    if (islower(in_char))
-    {
-      out_char = toupper(in_char);
-    }
-    else
-    {
-      out_char = in_char;
-    }
+      inputText += toupper(c);
   }
 
-  switch (in_char) {
+  switch (c) {
     case '1':
-    out_char = one;
+    inputText += "ONE";
     break;
 
     case '2':
-    out_char = two;
+    inputText += "TWO";
     break;
 
     case '3':
-    out_char = three;
+    inputText += "THREE";
     break;
 
     case '4':
-    out_char = four;
+    inputText += "FOUR";
     break;
 
     case '5':
-    out_char = five;
+    inputText += "FIVE";
     break;
 
     case '6':
-    out_char = six;
+    inputText += "SIX";
     break;
 
     case '7':
-    out_char = seven;
+    inputText += "SEVEN";
     break;
 
     case '8':
-    out_char = eight;
+    inputText += "EIGHT";
     break;
 
     case '9':
-    out_char = nine;
+    inputText += "NINE";
     break;
 
     case '0':
-    out_char = zero;
+    inputText += "ZERO";
     break;
 
   }
 
-  if (isalnum(in_char))
-  {
-    out_str.append(out_char);
-  }
-
-  return out_str;
+  return inputText;
 
 }

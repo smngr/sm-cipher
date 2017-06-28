@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/spmngr/cpp-tutorial/sm-cipher/MPAGSCipher/transformChar.cpp
+iostream
+-
+string
+-
+
+/home/spmngr/cpp-tutorial/sm-cipher/mpags-cipher.cpp
+iostream
+-
+string
+-
+TransformChar.hpp
+/home/spmngr/cpp-tutorial/sm-cipher/TransformChar.hpp
+
